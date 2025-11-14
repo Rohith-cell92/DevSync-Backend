@@ -23,7 +23,8 @@ DevSync is a project management tool designed specifically for new or beginner d
 DevSync is built with the following technologies:
 
 * **Frontend:** ReactJs, React Flow, TailwindCSS
-* **Backend:** ExpressJs, MongoDB
+* **Backend:** ExpressJs,  MongoDB
+
 
 
 
