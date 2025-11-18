@@ -26,7 +26,7 @@ export async function editNode(req, res){
                 "title": title,
                 "color":color
             },
-            { returnOriginal: false }
+            { returnOriginal: false } //NODE stores now the new values of node, not the old values
         )
         return res.status(200).json({
             "updated": NODE
@@ -91,17 +91,8 @@ export async function saveProjects(req, res){
                 name,
                 projectID,
                 owner: req.user.email,
-                usersPerm : []
+                usersPerm: [[req.user.email, "Author"]]
             });
-
-            const pro2 = await Project.findOneAndUpdate (
-                { "projectID": projectID },
-                { 
-                    "usersPerm": [ [ req.user.email, "Author" ] ]
-                },
-                { returnOriginal: false }
-            )
-            
             let lst2 = req.user.projectPerms;
             lst2.push(projectID)
 
